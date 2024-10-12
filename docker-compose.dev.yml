@@ -20,6 +20,8 @@ services:
         MYSQL_USER: ${MYSQL_USER}
         MYSQL_PASSWORD: ${MYSQL_PASSWORD}
         MYSQL_DATABASE: ${MYSQL_DATABASE}
+        REDIS_PORT: ${REDIS_PORT}
+        REDIS_HOST: cache
 
   #MySql
   db:
@@ -33,5 +35,10 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
+
+  #Cache
+  cache:
+    image: redis:latest
+
 volumes:
   dbdata:
